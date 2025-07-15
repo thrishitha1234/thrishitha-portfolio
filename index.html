@@ -1,143 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thrishitha Kalvakota | Data Engineer</title>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background-color: #f8fafc;
-      color: #1f2937;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #1f2937;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #14b8a6;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      color: #14b8a6;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 5px;
-    }
-    .project, .experience {
-      margin-bottom: 20px;
-    }
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .skill {
-      background: #14b8a6;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #1f2937;
-      color: white;
-    }
-    .button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #14b8a6;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Thrishitha Kalvakota</h1>
-    <p>Software Engineer | Data Engineer | Data Analyst</p>
-  </header>
+<!-- Unified Portfolio: Software + Data Focus -->
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a Data Engineer passionate about turning raw data into valuable insights and solutions. With a background in Computer Science and currently pursuing my Master’s in Applied Data Science at San Jose State University, I focus on real-time systems, machine learning, and data architecture.</p>
-  </section>
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Hi, I'm Thrishitha Kalvakota</h1>
+    <p>Software Engineer | Data Engineer | Full Stack Developer | ML & Analytics</p>
+    <a href="#about" class="cta-button">Discover My Work</a>
+  </div>
+</section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <strong>AI-Powered Disease Prediction & Recommendation System</strong><br />
-      GenAI + NLP + RAG app for symptom-based diagnosis and specialist recommendations.<br />
-      <em>Python, Streamlit, PostgreSQL, XGBoost, RAG</em>
+<!-- ABOUT SECTION -->
+<section id="about" class="section fade-in">
+  <h2>About Me</h2>
+  <div class="about-content">
+    <div class="about-text">
+      <p>I'm a versatile professional pursuing my Master's in Applied Data Science at San José State University. My background spans full-stack development, software engineering, backend systems, data engineering, and machine learning.</p>
+      <p>I’ve built robust backend systems, developed scalable REST and GraphQL APIs, deployed full-stack web apps, architected ETL pipelines, used ML frameworks to build predictive models, worked with Snowflake and Kafka for big data ingestion, and created compelling dashboards using Tableau and Power BI.</p>
+      <p>I love looking at the world through a data-driven lens — discovering stories hidden in numbers, patterns, and trends. Developing applications that visualize insights, automate decisions, or power real-time dashboards has become my go-to hobby and creative outlet. Whether I'm building scalable APIs or crafting interactive data stories, I find joy in translating complexity into clarity.</p>
+      <p><strong>I am actively seeking roles in:</strong> Software Engineering, Backend Development, Full Stack Development, Data Engineering, Machine Learning, or Analytics — leveraging my ability to work across both engineering and data domains.</p>
     </div>
-    <div class="project">
-      <strong>Energy Demand Forecasting</strong><br />
-      Time-series forecasting with LightGBM + Optuna, 92% accuracy.<br />
-      <em>Python, LightGBM, Optuna, Pandas</em>
+    <div class="about-image">
+      <img src="https://via.placeholder.com/300x300/64ffda/000000?text=Thrishitha" alt="Thrishitha Kalvakota" class="profile-img">
     </div>
-    <div class="project">
-      <strong>Job Market Insights for International Students</strong><br />
-      ETL pipelines + LSTM models + dashboards in Tableau & Power BI.<br />
-      <em>Snowflake, Python, LSTM, Tableau, Power BI</em>
+  </div>
+</section>
+
+<!-- SKILLS SECTION (Grouped for clarity) -->
+<section id="skills" class="section fade-in">
+  <h2>Skills & Technologies</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>Programming & Backend</h3>
+      <p>Python, Java, JavaScript, TypeScript, Node.js, Django, FastAPI, REST, GraphQL, Microservices</p>
     </div>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="experience">
-      <strong>Eficens Systems – Data Engineer</strong><br />
-      Developed GraphQL APIs, anomaly detection with Autoencoders, real-time log processing with ELK Stack.
+    <div class="skill-card">
+      <h3>Databases & Cloud</h3>
+      <p>MySQL, PostgreSQL, MongoDB, Snowflake, Redis, Cassandra, Oracle, AWS, GCP, Azure, Docker, Lambda</p>
     </div>
-    <div class="experience">
-      <strong>Bartronic – Backend Intern</strong><br />
-      Created APIs and MySQL databases for attendance tracking at Tata Motors.
+    <div class="skill-card">
+      <h3>Machine Learning & AI</h3>
+      <p>Scikit-learn, TensorFlow, PyTorch, NLP, LLMs, OpenAI GPT, Llama, RAG, Optuna</p>
     </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="skill">Python</div>
-      <div class="skill">FastAPI</div>
-      <div class="skill">Node.js</div>
-      <div class="skill">MongoDB</div>
-      <div class="skill">Snowflake</div>
-      <div class="skill">Airflow</div>
-      <div class="skill">Tableau</div>
-      <div class="skill">Power BI</div>
-      <div class="skill">AWS</div>
-      <div class="skill">Kafka</div>
-      <div class="skill">TensorFlow</div>
-      <div class="skill">Scikit-learn</div>
+    <div class="skill-card">
+      <h3>Big Data & ETL</h3>
+      <p>Apache Spark, Kafka, Airflow, Hadoop, dbt, ETL Pipelines, ELK Stack</p>
     </div>
-  </section>
+    <div class="skill-card">
+      <h3>Data Visualization</h3>
+      <p>Tableau, Power BI, Looker, Advanced Excel, Interactive Dashboards</p>
+    </div>
+    <div class="skill-card">
+      <h3>Frontend & UI</h3>
+      <p>React Native, HTML5, CSS3, JavaScript, Responsive Design</p>
+    </div>
+  </div>
+</section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:laxmithrishitha.kalvakota@sjsu.edu">laxmithrishitha.kalvakota@sjsu.edu</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/thrishitha-kalvakota/" target="_blank">thrishitha-kalvakota</a></p>
-    <a class="button" href="Thrishitha_ML_1.pdf" download>Download Resume</a>
-  </section>
+<!-- PROJECTS SECTION -->
+<section id="projects" class="section fade-in">
+  <h2>Featured Projects</h2>
 
-  <footer>
-    <p>&copy; 2025 Thrishitha Kalvakota</p>
-  </footer>
-</body>
-</html>
+  <h3 style="color:#64ffda; margin-top:2rem;">🔧 Engineering Projects</h3>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-image">🔗</div>
+      <div class="project-content">
+        <h3>GraphQL API & Backend Systems</h3>
+        <p>Developed scalable GraphQL APIs for SIEM systems using Node.js and FastAPI. Integrated ELK Stack and ML-based anomaly detection.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-image">⚡</div>
+      <div class="project-content">
+        <h3>Energy Demand Forecasting API</h3>
+        <p>Built time-series forecasting APIs using LightGBM and Optuna. Integrated weather APIs and Redis for caching and fast performance.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-image">📱</div>
+      <div class="project-content">
+        <h3>Automated Attendance System</h3>
+        <p>Designed backend APIs and MySQL schemas for enterprise-grade tracking system. Optimized queries and added user auth modules.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-image">🏥</div>
+      <div class="project-content">
+        <h3>AI-Powered Disease Prediction System</h3>
+        <p>Built full-stack health app with GenAI and NLP. Backend in Python, Streamlit frontend, deployed on Render with CI/CD.</p>
+      </div>
+    </div>
+  </div>
 
+  <h3 style="color:#64ffda; margin-top:3rem;">📊 Data & Analytics Projects</h3>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-image">💼</div>
+      <div class="project-content">
+        <h3>Job Market Analytics Platform</h3>
+        <p>ETL pipelines with Snowflake DW, LSTM modeling, dashboards in Power BI/Looker, deployed using modern web stack.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-image">📊</div>
+      <div class="project-content">
+        <h3>Dashboard Visualizations</h3>
+        <p>Created Power BI and Tableau dashboards using real-world datasets to uncover insights in healthcare, finance, and logistics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="section fade-in">
+  <h2>Let's Work Together</h2>
+  <div class="contact-content">
+    <p>I’m actively exploring roles that let me solve meaningful problems — be it building scalable systems or uncovering insights from data. Let’s connect and discuss how I can contribute to your team!</p>
+    <div class="contact-links">
+      <a href="mailto:laxmithrishitha.kalvakota@sjsu.edu" class="contact-link">Email Me</a>
+      <a href="https://www.linkedin.com/in/thrishitha-kalvakota/" class="contact-link">LinkedIn</a>
+      <a href="#" class="contact-link">GitHub</a>
+    </div>
+    <div style="margin-top: 2rem; opacity: 0.8;">
+      <p>📍 San Jose, CA | 📞 +1-408-569-8823</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2024 Thrishitha Kalvakota. All rights reserved.</p>
+</footer>
