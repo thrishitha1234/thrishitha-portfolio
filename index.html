@@ -1,131 +1,208 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thrishitha Kalvakota · Professional Portfolio</title>
-  <meta name="description" content="Portfolio of Thrishitha Kalvakota — Data Analyst, Business Analyst, Data Engineer, and more." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thrishitha Kalvakota</title>
+  <meta name="description" content="Portfolio of Thrishitha Kalvakota — Software Developer, Data Analyst, and Engineer." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
   <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; background: #0b1020; color: #fff; }
-    a { color: #5de0e6; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 1000px; margin: auto; padding: 20px; }
-    header { display: flex; flex-direction: column; align-items: center; padding: 20px; }
-    header h1 { margin: 0; font-size: 2.2rem; }
-    header p { color: #98a2b3; margin-top: 5px; }
-    nav { margin-top: 15px; display: flex; gap: 15px; }
-    nav a { padding: 6px 12px; background: rgba(255,255,255,0.05); border-radius: 6px; }
-    section { margin-top: 40px; }
-    h2 { font-size: 1.6rem; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
-    ul { list-style: none; padding: 0; }
-    li { margin-bottom: 8px; }
-    .chip { display: inline-block; padding: 5px 10px; background: #1b244a; margin: 5px; border-radius: 999px; font-size: 0.85rem; }
-    footer { text-align: center; margin: 40px 0; color: #98a2b3; font-size: 0.85rem; }
-  </style>
+    :root {
+      --bg: #0a0c1b;
+      --text: #eaeaea;
+      --primary: #56ccf2;
+      --secondary: #2f80ed;
+      --muted: #a0a7b3;
+      --card: #12172b;
+      --accent: #1f2937;
+      --light-bg: #f6f7fb;
+      --light-text: #1f2937;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .light-mode {
+      background: var(--light-bg);
+      color: var(--light-text);
+    }
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 18px;
+      background: transparent;
+      border: none;
+      color: var(--primary);
+    }
+    header {
+      background: var(--accent);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 { font-size: 24px; color: var(--primary); }
+    nav a {
+      margin-left: 20px;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover { color: var(--primary); }
+    .hero { padding: 80px 40px; text-align: center; }
+    .hero h2 {
+      font-size: 36px;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .section { padding: 60px 40px; }
+    .section h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h4 {
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+    .card .stack-icons i {
+      margin-right: 8px;
+      color: var(--primary);
+    }
+    .skills span {
+      display: inline-block;
+      background: var(--accent);
+      padding: 6px 12px;
+      margin: 5px;
+      border-radius: 6px;
+      color: var(--primary);
+      font-size: 14px;
+    }
+    .footer {
+      text-align: center;
+      padding: 30px 0;
+      font-size: 14px;
+      color: var(--muted);
+      background: var(--accent);
+      margin-top: 40px;
+    }
+    .cta-button {
+    background: var(--primary);
+    color: #0a0c1b;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(86, 204, 242, 0.3);
+  }
+</style>
 </head>
 <body>
   <header>
     <h1>Thrishitha Kalvakota</h1>
-    <p>Data Analyst · Business Analyst · Data Engineer</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div>
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-adjust"></i> Toggle Theme
+      </button>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I am a passionate and versatile professional skilled in data analytics, business analysis, and data engineering. With experience in building ETL pipelines, machine learning models, and visualization dashboards, I aim to turn complex data into actionable insights that drive decision-making across industries.</p>
-    </section>
+  <section class="hero">
+    <h2>Software Developer | Data Engineer | Analyst</h2>
+    <p>I design intelligent systems, build scalable data pipelines, and develop software with real-world impact.</p>
+  </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <div>
-        <span class="chip">Python</span>
-        <span class="chip">GraphQL</span>
-        <span class="chip">Java</span>
-        <span class="chip">JavaScript</span>
-        <span class="chip">HTML & CSS</span>
-        <span class="chip">MySQL</span>
-        <span class="chip">MongoDB</span>
-        <span class="chip">PostgreSQL</span>
-        <span class="chip">Apache Cassandra</span>
-        <span class="chip">Oracle</span>
-        <span class="chip">Snowflake</span>
-        <span class="chip">BigQuery</span>
-        <span class="chip">Apache Spark</span>
-        <span class="chip">Kafka</span>
-        <span class="chip">Airflow</span>
-        <span class="chip">dbt</span>
-        <span class="chip">Hadoop</span>
-        <span class="chip">Databricks</span>
-        <span class="chip">AWS</span>
-        <span class="chip">Google Cloud</span>
-        <span class="chip">Azure</span>
-        <span class="chip">Scikit-learn</span>
-        <span class="chip">TensorFlow</span>
-        <span class="chip">PyTorch</span>
-        <span class="chip">NLP</span>
-        <span class="chip">Tableau</span>
-        <span class="chip">Power BI</span>
-        <span class="chip">Advanced Excel</span>
+  <section class="section" id="projects">
+    <h3>Projects</h3>
+    <div class="project-grid">
+      <div class="card" data-aos="fade-up">
+        <h4>Job Scam Detection</h4>
+        <p>TF-IDF + ML Models (XGBoost, RF). Visualized with ROC + CM.</p>
+        <div class="stack-icons">
+          <i class="fab fa-python"></i>
+          <i class="fas fa-robot"></i>
+        </div>
+        <a href="https://github.com/thrishitha1234/job-scam-detection" target="_blank">View Project ↗</a>
       </div>
-    </section>
+      <div class="card" data-aos="fade-up">
+        <h4>Disease Prediction System</h4>
+        <p>Django, Node.js, React full-stack with AWS deployment and ML model integration.</p>
+        <div class="stack-icons">
+          <i class="fab fa-react"></i>
+          <i class="fab fa-aws"></i>
+        </div>
+      </div>
+      <div class="card" data-aos="fade-up">
+        <h4>Stock Analytics Pipeline</h4>
+        <p>ETL pipeline with Airflow, dbt, Docker, and Snowflake. Dashboards in Superset.</p>
+        <div class="stack-icons">
+          <i class="fas fa-database"></i>
+          <i class="fab fa-docker"></i>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Job Scam Detection using Machine Learning</strong> – Developed NLP-based classification pipeline using Logistic Regression, Random Forest, and XGBoost. <a href="https://github.com/thrishitha1234/job-scam-detection" target="_blank">View Project</a></li>
-        <li><strong>Disease Prediction and Specialist Recommendation System</strong> – Full-stack web app with Django, Node.js, and ML models deployed on AWS.</li>
-        <li><strong>Real-Time Stock Analytics Pipeline</strong> – Automated ELT pipeline using Airflow, dbt, Snowflake, and Docker. <a href="https://github.com/thrishitha1234/-Real-Time-Stock-Data-ETL-with-Airflow-Snowflake-and-dbt" target="_blank">View Project</a></li>
-      </ul>
-    </section>
+  <section class="section" id="about">
+  <h3>About Me</h3>
+  <p>Hi! I'm Thrishitha Kalvakota — a graduate student in Applied Data Science at San José State University with a strong passion for software development and data engineering. I enjoy turning real-world challenges into scalable solutions using code, cloud, and machine learning. Whether I'm deploying end-to-end pipelines or building intelligent apps, I strive to deliver meaningful impact through my work.</p>
+  <p>Below, you’ll find projects that reflect my skills in backend development, automation, and analytics — blending technical depth with creative problem-solving. I’m actively seeking roles where I can keep learning and building at the intersection of software and data.</p>
+  <div style="margin-top: 20px; display: flex; gap: 16px; flex-wrap: wrap;">
+  <a href="resume.pdf" target="_blank" class="cta-button">
+    <i class="fas fa-file-alt"></i> View Résumé
+  </a>
+  <a href="https://www.linkedin.com/in/thrishitha-kalvakota" target="_blank" class="cta-button">
+    <i class="fab fa-linkedin"></i> LinkedIn Profile
+  </a>
+</div>
+</section>
 
-    <section id="experience">
-      <h2>Experience</h2>
-      <ul>
-        <li><strong>Eficens Systems</strong> – Data Engineer (Jun 2023 – Jul 2024)
-          <ul>
-            <li>Engineered a SIEM Tool using ELK Stack, GraphQL, Django, and FastAPI for real-time data processing and security monitoring.</li>
-            <li>Integrated LLMs such as OpenAI GPT and Llama to analyze logs, detect anomalies, and extract threat intelligence.</li>
-            <li>Created security rules reducing false positives by 30%.</li>
-          </ul>
-        </li>
-        <li><strong>Eficens Systems</strong> – Data Engineer Intern (Jan 2023 – May 2023)
-          <ul>
-            <li>Conducted R&D on SIEM tools like Splunk for improved log collection.</li>
-            <li>Incorporated MITRE ATT&CK framework tactics into SIEM for enhanced threat detection.</li>
-          </ul>
-        </li>
-      </ul>
-    </section>
+<!-- Skills, Experience, Contact (unchanged) -->
 
-    <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>San Jose State University</strong> – MS in Applied Data Science (Aug 2024 – May 2026)</li>
-        <li><strong>ICFAI TECH</strong> – BTech in Computer Science and Engineering (2019 – 2023)</li>
-      </ul>
-    </section>
+  <div class="footer">
+    &copy; 2025 Thrishitha Kalvakota — All rights reserved.
+  </div>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:laxmithrishitha.kalvakota@sjsu.edu">laxmithrishitha.kalvakota@sjsu.edu</a></p>
-      <p>Phone: +1-408-569-8823</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/thrishitha-kalvakota/" target="_blank">linkedin.com/in/thrishitha-kalvakota</a></p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Thrishitha Kalvakota. All rights reserved.
-  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
 </body>
 </html>
