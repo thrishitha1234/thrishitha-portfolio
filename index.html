@@ -1,245 +1,863 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thrishitha Kalvakota</title>
-  <meta name="description" content="Portfolio of Thrishitha Kalvakota — Software Developer, Data Analyst, and Engineer." />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-  <style>
-    :root {
-      --bg: #0a0c1b;
-      --text: #eaeaea;
-      --primary: #56ccf2;
-      --secondary: #2f80ed;
-      --muted: #a0a7b3;
-      --card: #12172b;
-      --accent: #1f2937;
-      --light-bg: #f6f7fb;
-      --light-text: #1f2937;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      margin: 0;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    .light-mode {
-      background: var(--light-bg);
-      color: var(--light-text);
-    }
-    .theme-toggle {
-      cursor: pointer;
-      font-size: 18px;
-      background: transparent;
-      border: none;
-      color: var(--primary);
-    }
-    header {
-  background: var(--accent);
-  padding: 20px 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-    header h1 { font-size: 24px; color: var(--primary); }
-    nav a {
-      margin-left: 20px;
-      color: var(--muted);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    nav a:hover { color: var(--primary); }
-    .hero { padding: 80px 40px; text-align: center; }
-    .hero h2 {
-      font-size: 36px;
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
-    .section { padding: 60px 40px; }
-    .section h3 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      border-bottom: 2px solid var(--primary);
-      display: inline-block;
-      padding-bottom: 4px;
-    }
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: var(--card);
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card h4 {
-      color: var(--secondary);
-      margin-bottom: 10px;
-    }
-    .card .stack-icons i {
-      margin-right: 8px;
-      color: var(--primary);
-    }
-    .skills span {
-      display: inline-block;
-      background: var(--accent);
-      padding: 6px 12px;
-      margin: 5px;
-      border-radius: 6px;
-      color: var(--primary);
-      font-size: 14px;
-    }
-    .footer {
-      text-align: center;
-      padding: 30px 0;
-      font-size: 14px;
-      color: var(--muted);
-      background: var(--accent);
-      margin-top: 40px;
-    }
-    .cta-button {
-    background: var(--primary);
-    color: #0a0c1b;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(86, 204, 242, 0.3);
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thrishitha Kalvakota - Software Developer & Data Engineer</title>
+    <meta name="description" content="Portfolio of Thrishitha Kalvakota — Software Developer, Data Analyst, and Engineer specializing in ML, cloud technologies, and scalable systems.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-light: #764ba2;
+            --secondary: #f093fb;
+            --accent: #4facfe;
+            --bg-dark: #0f0f23;
+            --bg-card-dark: #1a1a3a;
+            --bg-section-dark: #16213e;
+            --text-primary-dark: #ffffff;
+            --text-secondary-dark: #b8c5d6;
+            --text-muted-dark: #8892b0;
+            --bg-light: #ffffff;
+            --bg-card-light: #f8fafc;
+            --bg-section-light: #f1f5f9;
+            --text-primary-light: #1e293b;
+            --text-secondary-light: #475569;
+            --text-muted-light: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-x: hidden;
+        }
+
+        /* Dark theme (default) */
+        body {
+            background: var(--bg-dark);
+            color: var(--text-primary-dark);
+        }
+
+        /* Light theme */
+        body.light-theme {
+            background: var(--bg-light);
+            color: var(--text-primary-light);
+        }
+
+        body.light-theme .card {
+            background: var(--bg-card-light);
+            border: 1px solid #e2e8f0;
+        }
+
+        body.light-theme .hero-bg {
+            background: linear-gradient(135deg, var(--bg-section-light) 0%, #e0e7ff 100%);
+        }
+
+        body.light-theme .section:nth-child(even) {
+            background: var(--bg-section-light);
+        }
+
+        body.light-theme .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        body.light-theme .nav-links a {
+            color: var(--text-secondary-light);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: rotate(180deg);
+        }
+
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-section-dark) 100%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            color: var(--text-secondary-dark);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        body.light-theme .hero-subtitle {
+            color: var(--text-secondary-light);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-muted-dark);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        body.light-theme .hero-description {
+            color: var(--text-muted-light);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Particle background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { top: 80%; left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { top: 40%; left: 80%; animation-delay: 2s; }
+        .particle:nth-child(4) { top: 60%; left: 70%; animation-delay: 3s; }
+        .particle:nth-child(5) { top: 10%; left: 90%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section:nth-child(even) {
+            background: var(--bg-section-dark);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card-dark);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-secondary-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        body.light-theme .card p {
+            color: var(--text-secondary-light);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .card-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .card-link:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        /* About section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary-dark);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        body.light-theme .about-text {
+            color: var(--text-secondary-light);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--text-primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        body.light-theme .skill-item {
+            color: var(--text-primary-light);
+        }
+
+        .skill-item:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-card-dark);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        body.light-theme .contact-item {
+            background: var(--bg-card-light);
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary-dark);
+            margin: 0;
+        }
+
+        body.light-theme .contact-info p {
+            color: var(--text-secondary-light);
+        }
+
+        /* Experience section specific styles */
+        body.light-theme .card div[style*="color: var(--text-muted-dark)"] {
+            color: var(--text-muted-light) !important;
+        }
+        
+        body.light-theme .card div[style*="color: var(--text-secondary-dark)"] {
+            color: var(--text-secondary-light) !important;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-section-dark);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted-dark);
+        }
+
+        body.light-theme .footer {
+            background: var(--bg-section-light);
+            color: var(--text-muted-light);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section {
+                padding: 3rem 1rem;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(102, 126, 234, 0.2);
+            z-index: 9999;
+        }
+
+        .scroll-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.1s ease;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1 style="text-align: center; width: 100%;">Thrishitha Kalvakota</h1>
-<p style="font-size: 1.1rem; color: var(--muted); text-align: center; margin-top: 4px;">
-  Software Developer · Data Analyst · Engineer
-</p>
-    <div>
-      <button class="theme-toggle" onclick="toggleTheme()">
-        <i class="fas fa-adjust"></i> Toggle Theme
-      </button>
-      <nav>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scroll-progress"></div>
     </div>
-  </header>
 
-  
-
-  <section class="section" id="projects">
-    <h3>Projects</h3>
-    <div class="project-grid">
-      <div class="card" data-aos="fade-up">
-        <h4>Job Scam Detection</h4>
-        <p>TF-IDF + ML Models (XGBoost, RF). Visualized with ROC + CM.</p>
-        <div class="stack-icons">
-          <i class="fab fa-python"></i>
-          <i class="fas fa-robot"></i>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Thrishitha Kalvakota</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <a href="https://github.com/thrishitha1234/job-scam-detection" target="_blank">View Project ↗</a>
-      </div>
-      <div class="card" data-aos="fade-up">
-        <h4>Disease Prediction System</h4>
-        <p>Django, Node.js, React full-stack with AWS deployment and ML model integration.</p>
-        <div class="stack-icons">
-          <i class="fab fa-react"></i>
-          <i class="fab fa-aws"></i>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero hero-bg">
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
         </div>
-      </div>
-      <div class="card" data-aos="fade-up">
-        <h4>Stock Analytics Pipeline</h4>
-        <p>ETL pipeline with Airflow, dbt, Docker, and Snowflake. Dashboards in Superset.</p>
-        <div class="stack-icons">
-          <i class="fas fa-database"></i>
-          <i class="fab fa-docker"></i>
+        <div class="hero-content">
+            <h1 class="hero-title">Software Developer & Data Engineer</h1>
+            <p class="hero-subtitle">Transforming ideas into intelligent systems</p>
+            <p class="hero-description">
+                I design scalable data pipelines, build intelligent applications, and develop software solutions that drive real-world impact. Currently pursuing MS in Applied Data Science at San José State University.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-code"></i> View My Work
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="hero" id="about">
-  <h3>About Me</h3>
-  <p>Hi! I'm Thrishitha Kalvakota — a graduate student in Applied Data Science at San José State University with a strong passion for software development and data engineering. I enjoy turning real-world challenges into scalable solutions using code, cloud, and machine learning. Whether I'm deploying end-to-end pipelines or building intelligent apps, I strive to deliver meaningful impact through my work.</p>
-  <p>Below, you’ll find projects that reflect my skills in backend development, automation, and analytics — blending technical depth with creative problem-solving. I’m actively seeking roles where I can keep learning and building at the intersection of software and data.</p>
-  <div style="margin-top: 20px; display: flex; gap: 16px; flex-wrap: wrap;">
-  <a href="resume.pdf" target="_blank" class="cta-button">
-    <i class="fas fa-file-alt"></i> View Résumé
-  </a>
-  <a href="https://www.linkedin.com/in/thrishitha-kalvakota" target="_blank" class="cta-button">
-    <i class="fab fa-linkedin"></i> LinkedIn Profile
-  </a>
-</div>
-</section>
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p class="about-text">
+                Hi! I'm Thrishitha Kalvakota, a passionate software developer and data engineer with a strong foundation in machine learning, cloud technologies, and full-stack development. Currently pursuing my Master's in Applied Data Science at San José State University, I love turning complex challenges into elegant, scalable solutions.
+            </p>
+            <p class="about-text">
+                My journey spans from building intelligent ML models to designing robust data pipelines and creating user-centric applications. I thrive at the intersection of software engineering and data science, where I can leverage both technical depth and creative problem-solving to deliver meaningful impact.
+            </p>
+            <div class="hero-buttons">
+                <a href="resume.pdf" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+                <a href="https://www.linkedin.com/in/thrishitha-kalvakota" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-linkedin"></i> LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </section>
 
-<section class="section" id="skills">
-  <h3>Skills</h3>
-  <div class="skills">
-    <span>Python</span><span>Java</span><span>JavaScript</span><span>SQL</span>
-    <span>React</span><span>Django</span><span>Node.js</span><span>FastAPI</span>
-    <span>TensorFlow</span><span>Scikit-learn</span><span>Apache Kafka</span><span>Airflow</span>
-    <span>Snowflake</span><span>MongoDB</span><span>PostgreSQL</span><span>Docker</span>
-    <span>GCP</span><span>AWS</span><span>Power BI</span><span>Tableau</span>
-  </div>
-</section>
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3><i class="fas fa-shield-alt"></i> Job Scam Detection System</h3>
+                <p>Advanced machine learning system using TF-IDF vectorization and ensemble methods (XGBoost, Random Forest) to detect fraudulent job postings. Achieved 95% accuracy with comprehensive model evaluation using ROC curves and confusion matrices.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">XGBoost</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Matplotlib</span>
+                </div>
+                <div class="card-links">
+                    <a href="https://github.com/thrishitha1234/job-scam-detection" target="_blank" class="card-link">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+            </div>
 
-<section class="section" id="experience">
-  <h3>Experience</h3>
-  <div class="card">
-    <h4>Data Engineer — Eficens Systems <span style="float:right; font-size: 0.9rem; color: var(--muted);">Jun 2023 – Jul 2024</span></h4>
-    <ul>
-      <li>Engineered a SIEM Tool using ELK Stack, GraphQL, and Django for real-time security event monitoring.</li>
-      <li>Integrated OpenAI GPT and Llama to automate log analysis and anomaly detection using embedding pipelines.</li>
-      <li>Created custom alert rules, improving threat visibility and reducing false positives by 30%.</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h4>Data Engineer Intern — Eficens Systems <span style="float:right; font-size: 0.9rem; color: var(--muted);">Jan 2023 – May 2023</span></h4>
-    <ul>
-      <li>Performed R&D on SIEM tools such as Splunk for enterprise-scale log integration.</li>
-      <li>Developed log parsing methods for Cisco, Palo Alto, and Juniper devices, improving ingest capabilities.</li>
-      <li>Mapped MITRE ATT&CK framework into detection strategies to enhance security analytics coverage.</li>
-    </ul>
-  </div>
-</section>
+            <div class="card">
+                <h3><i class="fas fa-heartbeat"></i> Disease Prediction Platform</h3>
+                <p>Full-stack healthcare application with ML-powered disease prediction. Built with Django backend, React frontend, and Node.js microservices. Deployed on AWS with CI/CD pipeline and real-time model inference.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Django</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                </div>
+                <div class="card-links">
+                    <a href="#" class="card-link">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
 
-<section class="section" id="contact">
-  <h3>Contact</h3>
-  <p>Email: <a href="mailto:laxmithrishitha.kalvakota@sjsu.edu">laxmithrishitha.kalvakota@sjsu.edu</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/thrishitha-kalvakota" target="_blank">linkedin.com/in/thrishitha-kalvakota</a></p>
-  <p>GitHub: <a href="https://github.com/thrishitha1234" target="_blank">github.com/thrishitha1234</a></p>
-</section>
+            <div class="card">
+                <h3><i class="fas fa-chart-line"></i> Stock Analytics ETL Pipeline</h3>
+                <p>Comprehensive data engineering solution with Apache Airflow orchestration, dbt transformations, and Snowflake data warehouse. Features real-time dashboards in Apache Superset with automated data quality monitoring.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Apache Airflow</span>
+                    <span class="tech-tag">dbt</span>
+                    <span class="tech-tag">Snowflake</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Apache Superset</span>
+                    <span class="tech-tag">Python</span>
+                </div>
+                <div class="card-links">
+                    <a href="#" class="card-link">
+                        <i class="fas fa-database"></i> Architecture
+                    </a>
+                </div>
+            </div>
 
-  <div class="footer">
-    &copy; 2025 Thrishitha Kalvakota — All rights reserved.
-  </div>
+            <div class="card">
+                <h3><i class="fas fa-brain"></i> Intelligent Recommendation Engine</h3>
+                <p>Hybrid recommendation system combining collaborative filtering and content-based approaches. Implemented using deep learning techniques with real-time inference capabilities and A/B testing framework.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">Kubernetes</span>
+                    <span class="tech-tag">MongoDB</span>
+                </div>
+                <div class="card-links">
+                    <a href="#" class="card-link">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('light-mode');
-    }
-  </script>
-</body>
-</html>
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4><i class="fas fa-code"></i> Programming Languages</h4>
+                <div class="skill-list">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">R</span>
+                    <span class="skill-item">TypeScript</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h4><i class="fas fa-robot"></i> Machine Learning & AI</h4>
+                <div class="skill-list">
+                    <span class="skill-item">TensorFlow</span>
+                    <span class="skill-item">PyTorch</span>
+                    <span class="skill-item">Scikit-learn</span>
+                    <span class="skill-item">XGBoost</span>
+                    <span class="skill-item">OpenCV</span>
+                    <span class="skill-item">NLP</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h4><i class="fas fa-database"></i> Data Engineering</h4>
+                <div class="skill-list">
+                    <span class="skill-item">Apache Airflow</span>
+                    <span class="skill-item">dbt</span>
+                    <span class="skill-item">Snowflake</span>
+                    <span class="skill-item">Apache Kafka</span>
+                    <span class="skill-item">Apache Spark</span>
+                    <span class="skill-item">Hadoop</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h4><i class="fas fa-globe"></i> Web Development</h4>
+                <div class="skill-list">
+                    <span class="skill-item">React</span>
+                    <span class="skill-item">Node.js</span>
+                    <span class="skill-item">Django</span>
+                    <span class="skill-item">FastAPI</span>
+                    <span class="skill-item">Express.js</span>
+                    <span class="skill-item">Next.js</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h4><i class="fas fa-cloud"></i> Cloud & DevOps</h4>
+                <div class="skill-list">
+                    <span class="skill-item">AWS</span>
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">Kubernetes</span>
+                    <span class="skill-item">GitHub Actions</span>
+                    <span class="skill-item">Terraform</span>
+                    <span class="skill-item">Jenkins</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h4><i class="fas fa-chart-bar"></i> Data Visualization</h4>
+                <div class="skill-list">
+                    <span class="skill-item">Tableau</span>
+                    <span class="skill-item">Power BI</span>
+                    <span class="skill-item">D3.js</span>
+                    <span class="skill-item">Matplotlib</span>
+                    <span class="skill-item">Plotly</span>
+                    <span class="skill-item">Apache Superset</span>
+                </div>
+            </div
