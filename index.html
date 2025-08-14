@@ -72,6 +72,11 @@
         .theme-toggle:hover { background: rgba(102, 126, 234, 0.1); transform: rotate(180deg); }
         .mobile-menu-btn { display: none; background: none; border: none; color: var(--primary); font-size: 1.5rem; cursor: pointer; }
 
+        /*/* Palette select */
+        .palette-select { background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 0.4rem 0.6rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; }
+        body.light-theme .palette-select { color: var(--primary); border-color: var(--primary); }
+        .palette-select option { color: #111; }
+
         /* Hero */
         .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; position: relative; overflow: hidden; }
         .hero-bg { background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-section-dark) 100%); }
@@ -180,6 +185,14 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li>
+                    <select id="palette-select" class="palette-select" onchange="setPalette(this.value)" aria-label="Color palette">
+                        <option value="indigo">Indigo</option>
+                        <option value="emerald">Emerald</option>
+                        <option value="sunset">Sunset</option>
+                        <option value="ocean">Ocean</option>
+                    </select>
+                </li>
                 <li>
                     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                         <i class="fas fa-moon" id="theme-icon"></i>
@@ -315,6 +328,17 @@
                     <li>Integrated OpenAI GPT and Llama to automate log analysis and anomaly detection using embedding pipelines.</li>
                     <li>Created custom alert rules, improving threat visibility and reducing false positives by 30%.</li>
                 </ul>
+                <div style="margin-top:1rem; font-weight:600; color: var(--primary);">Skills Used</div>
+                <div class="tech-stack" aria-label="Skills used">
+                    <span class="tech-tag">ELK (Elasticsearch, Logstash, Kibana)</span>
+                    <span class="tech-tag">GraphQL</span>
+                    <span class="tech-tag">Django</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OpenAI GPT</span>
+                    <span class="tech-tag">Llama</span>
+                    <span class="tech-tag">Embeddings</span>
+                    <span class="tech-tag">SIEM</span>
+                </div>
             </div>
             <div class="card">
                 <h3>Data Engineer Intern — Eficens Systems</h3>
@@ -324,6 +348,16 @@
                     <li>Developed log parsing methods for Cisco, Palo Alto, and Juniper devices, improving ingest capabilities.</li>
                     <li>Mapped MITRE ATT&amp;CK framework into detection strategies to enhance security analytics coverage.</li>
                 </ul>
+                <div style="margin-top:1rem; font-weight:600; color: var(--primary);">Skills Used</div>
+                <div class="tech-stack" aria-label="Skills used">
+                    <span class="tech-tag">Splunk</span>
+                    <span class="tech-tag">Log Parsing</span>
+                    <span class="tech-tag">Cisco</span>
+                    <span class="tech-tag">Palo Alto</span>
+                    <span class="tech-tag">Juniper</span>
+                    <span class="tech-tag">MITRE ATT&CK</span>
+                    <span class="tech-tag">Python</span>
+                </div>
             </div>
         </div>
     </section>
@@ -352,6 +386,26 @@
     <footer class="footer">© <span id="year"></span> Thrishitha Kalvakota. All rights reserved.</footer>
 
     <script>
+        // Color palette switcher
+        const PALETTES = {
+            indigo: { '--primary':'#667eea','--primary-light':'#764ba2','--secondary':'#f093fb','--accent':'#4facfe' },
+            emerald: { '--primary':'#10b981','--primary-light':'#34d399','--secondary':'#06b6d4','--accent':'#22d3ee' },
+            sunset: { '--primary':'#f59e0b','--primary-light':'#ef4444','--secondary':'#fb7185','--accent':'#f97316' },
+            ocean:  { '--primary':'#0ea5e9','--primary-light':'#22d3ee','--secondary':'#38bdf8','--accent':'#06b6d4' }
+        };
+        function applyPalette(name){
+            const root = document.documentElement;
+            const p = PALETTES[name] || PALETTES.indigo;
+            Object.entries(p).forEach(([k,v]) => root.style.setProperty(k, v));
+            localStorage.setItem('palette', name);
+            const sel = document.getElementById('palette-select');
+            if (sel) sel.value = name;
+        }
+        function setPalette(name){ applyPalette(name); }
+        // Apply saved palette on load
+        (function(){ const saved = localStorage.getItem('palette'); if(saved){ applyPalette(saved); }})();
+
+
         // Theme toggle
         function toggleTheme() {
             document.body.classList.toggle('light-theme');
